@@ -1,30 +1,30 @@
-package com.spring.spring.Entities;
+package com.spring.spring.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
 @Entity
-@Data
-@Table(name="like")
-public class Like {
+@Getter
+@Setter
+@Table(name="begeni")
+public class Begeni {
     @Id
-    Long id;
+    private Long id;
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="post_id",nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)     // bir user silindiğinde postalrı silinsin
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    Post post;
-
-
+    private Post post;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_id",nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)     // bir user silindiğinde postalrı silinsin
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    User user;
+    private User user;
 
 }

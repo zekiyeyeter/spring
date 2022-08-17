@@ -1,12 +1,10 @@
-package com.spring.spring.Controllers;
+package com.spring.spring.controllers;
 
-import com.spring.spring.Entities.User;
-import com.spring.spring.Repository.UserRepository;
-import com.spring.spring.Services.UserService;
+import com.spring.spring.entities.User;
+import com.spring.spring.services.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -29,7 +27,7 @@ private UserService userService;
     }
     @GetMapping("/{userId}")
         public User getOneUser(@PathVariable Long userId){
-            return userService.getOneUser(userId);
+            return userService.getOneUserById(userId);
         }
         @PutMapping("/{userId}")
     public User updateOneUser(@PathVariable Long userId,@RequestBody User newUser){

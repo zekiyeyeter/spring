@@ -1,7 +1,7 @@
-package com.spring.spring.Services;
+package com.spring.spring.services;
 
-import com.spring.spring.Entities.User;
-import com.spring.spring.Repository.UserRepository;
+import com.spring.spring.entities.User;
+import com.spring.spring.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,7 +23,7 @@ UserRepository userRepository;
         return userRepository.save(newUser);
     }
 
-    public User getOneUser(Long userId) {
+    public User getOneUserById(Long userId) {
         return userRepository.findById(userId).orElse(null);
     }
 

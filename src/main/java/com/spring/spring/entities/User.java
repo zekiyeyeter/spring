@@ -1,4 +1,4 @@
-package com.spring.spring.Entities;
+package com.spring.spring.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
