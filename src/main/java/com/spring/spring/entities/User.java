@@ -1,8 +1,7 @@
 package com.spring.spring.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import lombok.Data;// geter setter otomotik generate
 
 @Entity
@@ -10,6 +9,8 @@ import lombok.Data;// geter setter otomotik generate
 @Data
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     Long id;
     String userName;
     String password;

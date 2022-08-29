@@ -14,13 +14,14 @@ import java.util.Date;
 @Table(name="comment")
 public class Comment {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     Long id;
+
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="post_id",nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)     // bir user silindiğinde postalrı silinsin
     @JsonIgnore
     Post post;
-
 
 
     @ManyToOne(fetch=FetchType.LAZY)

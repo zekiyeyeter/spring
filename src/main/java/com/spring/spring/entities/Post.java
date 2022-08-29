@@ -2,6 +2,7 @@ package com.spring.spring.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -14,7 +15,9 @@ import java.util.List;
 @Setter
 @Table(name= "post")
 public class Post {
+
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch=FetchType.EAGER)
